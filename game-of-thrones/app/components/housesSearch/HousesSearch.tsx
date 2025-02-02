@@ -16,7 +16,7 @@ export function useHouseSearch(houses: House[]) {
     const handleSearchHouse = (query: string) => {
         const lowerQuery = query.toLowerCase();
 
-        const results = houses.filter((house) => {
+        const results = houses.filter(() => {
             return Object.values(houses).some((value) => {
                 if (Array.isArray(value)) {
                     return value.some((v) => v.toLowerCase().includes(lowerQuery));

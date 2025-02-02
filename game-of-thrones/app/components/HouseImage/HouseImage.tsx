@@ -7,7 +7,7 @@ interface HouseImageProps extends ImageProps {
     height: number
 }
 
-export default function HouseImage({src, alt, width, height, ...rest} : HouseImageProps) {
+export default function HouseImage({src, alt, width, height} : HouseImageProps) {
     return (
         <>
             <Image src={ src } alt= { alt } width={ width } height={ height }/>

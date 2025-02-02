@@ -4,16 +4,6 @@ import { useBooks } from "../components/bookFetch/BookFetch";
 import { useSearchBooks } from "../components/bookSearch/BookSearch";
 import BookSearchForm from "../components/bookFilterForm/BookFilterForm";
 
-interface Book {
-    name: string;
-    isbn: string;
-    authors: string[];
-    numberOfPages: number;
-    publisher: string;
-    country: string;
-    mediaType: string;
-    released: string;
-}
 
 export default function Books() {
     const { books, loading } = useBooks(); 
