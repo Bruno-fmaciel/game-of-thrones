@@ -4,14 +4,13 @@ import { useBooks } from "../components/bookFetch/BookFetch";
 import { useSearchBooks } from "../components/bookSearch/BookSearch";
 import BookSearchForm from "../components/bookFilterForm/BookFilterForm";
 
-
 export default function Books() {
     const { books, loading } = useBooks(); 
     const { filteredBooks, handleSearch } = useSearchBooks(books);
 
     useEffect(() => {
         if (!loading && books.length > 0) {
-            handleSearch(''); 
+            handleSearch('');
         }
     }, [loading, books, handleSearch]);
 
@@ -23,7 +22,7 @@ export default function Books() {
         <div className="w-full h-screen flex flex-col items-center justify-start">
             <h1 className="text-5xl mt-8 mb-4 text-center font-bold">Conheça os Livros que inspiraram as Séries 📖</h1>
             <div>
-                <BookSearchForm onSearch={ handleSearch } />
+                <BookSearchForm onSearch={handleSearch} />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8 w-full px-4">

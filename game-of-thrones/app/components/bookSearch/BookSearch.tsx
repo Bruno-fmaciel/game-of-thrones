@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 interface Book {
     name: string;
@@ -14,9 +14,10 @@ interface Book {
 export function useSearchBooks(books: Book[]) {
     const [filteredBooks, setFilteredBooks] = useState<Book[]>(books);
 
-    const handleSearch = (query: string) => {
+    // Memoriza a função handleSearch para evitar recriação desnecessária a cada renderização
+    const handleSearch = useCallback((query: string) => {
         const lowerQuery = query.toLowerCase();
-    
+
         const results = books.filter((book) =>
             Object.values(book).some((value) =>
                 Array.isArray(value)
@@ -24,9 +25,9 @@ export function useSearchBooks(books: Book[]) {
                     : value.toString().toLowerCase().includes(lowerQuery)
             )
         );
-    
+
         setFilteredBooks(results);
-    };
+    }, [books]);  // Apenas recria se a lista de livros mudar
 
     return { filteredBooks, handleSearch };
 }
