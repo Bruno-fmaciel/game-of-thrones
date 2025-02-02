@@ -30,26 +30,27 @@ export default function Books() {
     }
 
     return (
-        <>
+        <div className="w-full h-screen flex flex-col items-center justify-start">
             <h1 className="text-5xl mt-8 mb-4 text-center font-bold">Conheça os Livros que inspiraram as Séries 📖</h1>
             <div>
                 <BookSearchForm onSearch={ handleSearch } />
             </div>
-            <div className="grid grid-cols-3 gap-4 mt-8">
-                { filteredBooks.length === 0 ? (
-                    <p>Nenhum livro encontrado.</p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8 w-full px-4">
+                {filteredBooks.length === 0 ? (
+                    <p className="text-center col-span-full">Nenhum livro encontrado.</p>
                 ) : (
                     filteredBooks.map((book) => (
-                        <div key={book.isbn} className="card">
-                            <h3>Livro: {book.name}</h3>
-                            <p>Autor: {book.authors.join(' ,')}</p>
-                            <p>Data de Publicação: {book.released}</p>
-                            <p>Editora: {book.publisher}</p>
-                            <p>Número de Páginas: {book.numberOfPages}</p>
+                        <div key={book.isbn} className="card bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <h3 className="text-xl font-semibold text-gray-800">{book.name}</h3>
+                            <p className="text-gray-600 mt-2"><strong>Autor:</strong> {book.authors.join(', ')}</p>
+                            <p className="text-gray-600"><strong>Data de Publicação:</strong> {book.released}</p>
+                            <p className="text-gray-600"><strong>Editora:</strong> {book.publisher}</p>
+                            <p className="text-gray-600"><strong>Número de Páginas:</strong> {book.numberOfPages}</p>
                         </div>
                     ))
                 )}
             </div>
-        </>
+        </div>
     );
 }

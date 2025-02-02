@@ -4,24 +4,24 @@ import { useHouses } from '../components/housesFetch/HousesFetch';
 import HousesSearchForm from '../components/housesFilterForm/HousesFilterForm';
 
 export default function Houses() {
-    const [searchId, setSearchId] = useState<string| null>(null);
+    const [searchId, setSearchId] = useState<string | null>(null);
     const { house, loading } = useHouses(searchId);
 
     const handleSearchHouse = (id: string) => {
         setSearchId(id);
-    }
+    };
 
     if (loading) {
-        return <div>Carregando Casa...</div>
+        return <div>Carregando Casa...</div>;
     }
 
     return (
-        <>
+        <div className="w-full h-screen flex flex-col items-center justify-start">
             <h1 className="text-5xl mt-8 mb-4 text-center font-bold">As Casas 🏰</h1>
             <div>
                 <HousesSearchForm onSearch={handleSearchHouse} />
             </div>
-            
+
             {house ? (
                 <div className="mt-8">
                     <div className="card text-center p-6 border rounded-lg shadow-md w-80 mx-auto">
@@ -35,8 +35,8 @@ export default function Houses() {
                     </div>
                 </div>
             ) : (
-                <div className="mt-8 text-center">Personagem não encontrado.</div>
+                <div className="mt-8 text-center">Casa não encontrada.</div>
             )}
-        </>
+        </div>
     );
 }

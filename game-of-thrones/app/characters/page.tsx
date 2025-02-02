@@ -16,7 +16,7 @@ export default function Characters() {
     }
 
     return (
-        <>
+        <div className="w-full h-screen flex flex-col items-center justify-start">
             <h1 className="text-5xl mt-8 mb-4 text-center font-bold">Personagem Específico</h1>
 
             <div>
@@ -39,6 +39,6 @@ export default function Characters() {
             ) : (
                 <div className="mt-8 text-center">Personagem não encontrado.</div>
             )}
-        </>
+        </div>
     );
 }

@@ -26,7 +26,7 @@ export default function Home() {
             </div>
 
             <div className="">
-                <h2 className="text-3xl mt-8 text-center font-bold">Estile o site com o tema de uma das seis casas principais!</h2>
+                <h2 className="text-3xl mt-8 text-center font-bold">Estile o site com o tema de uma das seis casas principais! (Em desenvolvimento)</h2>
                 <HouseStyle />
             </div>
         </div>
