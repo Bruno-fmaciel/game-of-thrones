@@ -6,10 +6,8 @@ export default function Home() {
         <div className="w-2/3 mx-auto">
             <h1 className="text-5xl font-bold mt-10 mb-4 text-center text-black">Bem-vindo ao Reino de Westeros 🏰❄️🔥</h1>
             <p className="text-justify text-base text-black">
-                Entre em um mundo onde reis lutam pelo Trono de Ferro, casas nobres tramam no jogo dos tronos e lendas antigas despertam no gelo e no fogo. Game of Thrones, inspirado na saga "As Crônicas de Gelo e Fogo" de George R.R. Martin, conquistou milhões de fãs com sua narrativa épica, personagens complexos e batalhas inesquecíveis.
-                <br />
-                Aqui, você encontrará tudo sobre esse universo fascinante:
-            </p>
+                Entre em um mundo onde reis lutam pelo Trono de Ferro, casas nobres tramam no jogo dos tronos e lendas antigas despertam no gelo e no fogo. Game of Thrones, inspirado na saga &quot;As Crônicas de Gelo e Fogo&quot; de George R.R. Martin, conquistou milhões de fãs com sua narrativa épica, personagens complexos e batalhas inesquecíveis.
+            </p>            
             <div className="mt-8 space-y-4">
                 <div className="flex items-center space-x-2">
                     <MenuLink texto="📖 Os Livros" href="/books" className="font-bold hover:text-color-accent duration-300 ease-in" />

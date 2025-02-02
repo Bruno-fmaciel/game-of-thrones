@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useBooks } from "../components/bookFetch/BookFetch";
 import { useSearchBooks } from "../components/bookSearch/BookSearch";
 import BookSearchForm from "../components/bookFilterForm/BookFilterForm";
@@ -23,7 +23,7 @@ export default function Books() {
         if (!loading && books.length > 0) {
             handleSearch(''); 
         }
-    }, [loading, books]);
+    }, [loading, books, handleSearch]);
 
     if (loading) {
         return <div>Carregando livros...</div>;
