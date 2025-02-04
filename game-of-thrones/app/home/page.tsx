@@ -1,16 +1,12 @@
 'use client';
 import React, { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
-import { themes } from "../context/ThemeContext";
 import MenuLink from "../components/menuLink/MenuLink";
 import HouseStyle from "../components/houseStyle/HouseStyle";
 
 export default function Home() {
-  const { theme, changeTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
-  const houses: (keyof typeof themes)[] = [
-    "padrao", "stark", "lannister", "tyrell", "targaryen", "baratheon", "martell"
-  ];
 
   return (
     <div

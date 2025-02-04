@@ -1,8 +1,8 @@
-import "styled-components";
-import { padrao, stark, lannister, tyrell, targaryen, baratheon, martell } from "@/app/styles/theme";
+// import "styled-components";
+// import { padrao } from "@/app/styles/theme";
 
-type ThemeType = typeof padrao;
+// type ThemeType = typeof padrao;
 
-declare module "styled-components" {
-    export interface DeafaultTheme extends ThemeType{}
-}
+// declare module "styled-components" {
+//     export interface DeafaultTheme extends ThemeType{}
+// }
